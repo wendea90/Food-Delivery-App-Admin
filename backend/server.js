@@ -17,7 +17,8 @@ import orderRouter from "./routes/orderRoute.js";
 //2.add one commet - app config
 const app = express();
 //3.difine port number - where our server will be running
-const port = 4000
+// const port = 4000
+const PORT = process.env.PORT || 4000
 
 //4.add one commet - middleware -initalize the middleware and when ever we will get the request from front-end to back-end that will be passed using this json
 app.use(express.json());
@@ -50,8 +51,8 @@ app.get("/", (req, res) => {
 })
 
 //4.3.run express server - so our basic server has been created
-app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server Started on http://localhost:${PORT}`);
 })
 //to run this srever- use terminal npm run server so our express server has been started
 //to test the api we will use thunder client so method get and api-http://localhost:4000 - res- api working
